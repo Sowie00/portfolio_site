@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   body {
     @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide;
@@ -27,6 +31,6 @@
     @apply cursor-pointer;
   }
   button {
-    @apply bg-none border-4 border-indigo-500/75  text-[#5651e5] flex items-center justify-between m-2 px-10 py-2 uppercase transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500;
+    @apply bg-none text-center border-4 border-indigo-500/75  text-[#5651e5] flex items-center justify-between m-2 px-10 py-2 uppercase transition-all ease-in duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500;
   }
 }
