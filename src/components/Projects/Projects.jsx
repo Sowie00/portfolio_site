@@ -1,9 +1,31 @@
 import Image from "next/image";
-import React from "react";
-import { projects } from "../../../constants/Data";
+import React, { useState, useCallback, useEffect } from "react";
 import ProjectItem from "./ProjectItem";
+import { getProject, getProjects } from "../../../lib/helper";
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const fetchProjectsHandler = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const data = await getProjects();
+      setProjects(data);
+      setIsLoading(false);
+      console.log(projects);
+    } catch (error) {
+      setError(error.message);
+    }
+    setIsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchProjectsHandler();
+  }, [fetchProjectsHandler]);
+
   return (
     <div id="projects" className="w-full">
       <div className="max-w-[1240px] mx-auto px-2 py-16">
@@ -17,7 +39,7 @@ const Projects = () => {
               title={project.title}
               image={project.image}
               tags={project.tags}
-              projectUrl={project.url}
+              projectId={project._id}
             />
           ))}
         </div>

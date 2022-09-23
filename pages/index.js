@@ -4,7 +4,6 @@ import About from "../src/components/About/About";
 import BackgroundAnimation from "../src/components/BackgroundAnimation/BackgroundAnimation";
 import Contact from "../src/components/Contact/Contact";
 import Main from "../src/components/Main/Main";
-import Navbar from "../src/components/Navbar/Navbar";
 import Projects from "../src/components/Projects/Projects";
 import Skills from "../src/components/Skills/Skills";
 
@@ -17,7 +16,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BackgroundAnimation />
-      <Navbar />
       <Main />
       <About />
       <Skills />

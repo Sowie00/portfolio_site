@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { getProject } from "../../../lib/helper";
 
-const ProjectItem = ({ title, image, tags, projectUrl }) => {
+const ProjectItem = ({ title, image, tags, projectId }) => {
   return (
     <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl transition-all ease-in-out delay-75 group hover:bg-gradient-to-r from-[#5651e5] to [#709dff] hover:scale-105">
       <Image
@@ -26,7 +27,7 @@ const ProjectItem = ({ title, image, tags, projectUrl }) => {
             );
           })}
         </ul>
-        <Link href="/projects/">
+        <Link key={projectId} href={`/projects/${projectId}`}>
           <p className="text-center py-3 rounded-lg bg-[#5651e5] text-white text-lg cursor-pointer">
             Learn More
           </p>

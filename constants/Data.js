@@ -60,7 +60,6 @@ export const projects = [
     tags: ["Mongo", "Express", "React", "Node"],
     source: "https://google.com",
     visit: "https://google.com",
-    url: "/memories",
     id: 0,
   },
   {
@@ -71,7 +70,6 @@ export const projects = [
     tags: ["React", "JavaScript"],
     source: "https://google.com",
     visit: "https://google.com",
-    url: "/commerce",
     id: 1,
   },
   {
@@ -82,7 +80,6 @@ export const projects = [
     tags: ["React", "WebRTC"],
     source: "https://google.com",
     visit: "https://google.com",
-    url: "/webrtc",
     id: 2,
   },
   {
@@ -93,7 +90,6 @@ export const projects = [
     tags: ["React", "ChatEngine", "Firebase"],
     source: "https://google.com",
     visit: "https://google.com",
-    url: "/unichat",
     id: 3,
   },
 ];
