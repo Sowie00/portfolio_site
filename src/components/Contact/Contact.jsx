@@ -4,6 +4,19 @@ import Link from "next/link";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 const Contact = () => {
+  const submitFormHandler = (e) => {
+    e.preventDefault();
+    const formData = {};
+    Array.from(e.currentTarget.elements).forEach((field) => {
+      if (!field.name) return;
+      formData[field.name] = field.value;
+    });
+    fetch("/api/mail", {
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
+    e.target.reset();
+  };
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
@@ -18,7 +31,7 @@ const Contact = () => {
                 <img
                   className="rounded-xl hover:scale-105 ease-in duration-300"
                   src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
-                  alt=""
+                  alt="/"
                 />
               </div>
               <div>
@@ -30,71 +43,92 @@ const Contact = () => {
                 </p>
               </div>
               <div>
-                <p className="uppercase pt-8">Connect With Me</p>
+                <p className="uppercase pt-8 text-[#5651e1]">Connect With Me</p>
                 <div className="flex items-center justify-start py-4">
-                  <div className="rounded-full mx-3 shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <FaLinkedinIn />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <FaGithub />
-                  </div>
+                  <Link href="https://www.linkedin.com/in/sourav-pandya-a999a7204/">
+                    <div className="rounded-full mx-3 shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 hover:shadow-lg hover:shadow-indigo-500 ease-in duration-200">
+                      <FaLinkedinIn color="#5651e1" />
+                    </div>
+                  </Link>
+                  <Link href="https://github.com/Sowie00">
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 hover:shadow-lg hover:shadow-indigo-500 ease-in duration-200">
+                      <FaGithub color="#5651e1" />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form>
+              <form onSubmit={submitFormHandler}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
-                    <label htmlFor="name" className="uppercase text-sm py-2">
+                    <label
+                      htmlFor="name"
+                      className="uppercase text-sm py-2 text-[#5651e1]"
+                    >
                       Name
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
+                      className="border-2 rounded-lg p-3 flex border-gray-300 bg-white"
                     />
                   </div>
                   <div className="flex flex-col">
-                    <label htmlFor="phone" className="uppercase text-sm py-2">
+                    <label
+                      htmlFor="phone"
+                      className="uppercase text-sm py-2 text-[#5651e1]"
+                    >
                       phone number
                     </label>
                     <input
                       type="text"
                       id="phone"
                       name="phone"
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
+                      className="border-2 rounded-lg p-3 flex border-gray-300 bg-white"
                     />
                   </div>
                 </div>
                 <div className="flex flex-col py-2">
-                  <label htmlFor="email" className="uppercase text-sm py-2">
+                  <label
+                    htmlFor="email"
+                    className="uppercase text-sm py-2 text-[#5651e1]"
+                  >
                     Email
                   </label>
                   <input
                     id="email"
                     type="email"
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    name="email"
+                    className="border-2 rounded-lg p-3 flex border-gray-300 bg-white"
                   />
                 </div>
                 <div className="flex flex-col py-2">
-                  <label htmlFor="subject" className="uppercase text-sm py-2">
+                  <label
+                    htmlFor="subject"
+                    className="uppercase text-sm py-2 text-[#5651e1]"
+                  >
                     subject
                   </label>
                   <input
                     id="subject"
                     type="text"
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    name="subject"
+                    className="border-2 rounded-lg p-3 flex border-gray-300 bg-white"
                   />
                 </div>
                 <div className="flex flex-col py-2">
-                  <label htmlFor="message" className="uppercase text-sm py-2">
+                  <label
+                    htmlFor="message"
+                    className="uppercase text-sm py-2 text-[#5651e1]"
+                  >
                     message
                   </label>
                   <textarea
-                    className="border-2 rounded-lg p-3 border-gray-300"
+                    className="border-2 rounded-lg p-3 border-gray-300 bg-white"
                     name="message"
                     id="message"
                     rows="10"

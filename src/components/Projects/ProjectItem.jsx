@@ -13,7 +13,7 @@ const ProjectItem = ({ title, image, tags, projectId }) => {
         height="700px"
       />
       <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-        <h3 className="text-2xl text-white tracking-wider text-center">
+        <h3 className="text-2xl text-black tracking-wider text-center">
           {title}
         </h3>
         <ul className="flex justify-around p-2 my-5">

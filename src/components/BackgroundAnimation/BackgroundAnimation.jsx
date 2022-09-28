@@ -16,7 +16,7 @@ const BackgroundAnimation = () => {
   }, []);
 
   return (
-    <div className="z-[-1] absolute">
+    <div className="z-[-1] relative">
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -59,7 +59,7 @@ const BackgroundAnimation = () => {
               },
             },
             color: {
-              value: "#ffffff",
+              value: ["#5651ec", "#0c116d", "#000003", "#080b4a", "#1721d7"],
             },
             shape: {
               type: "circle",
@@ -77,7 +77,7 @@ const BackgroundAnimation = () => {
               },
             },
             opacity: {
-              value: 0.5,
+              value: 1,
               random: false,
               anim: {
                 enable: false,
@@ -99,9 +99,9 @@ const BackgroundAnimation = () => {
             line_linked: {
               enable: true,
               distance: 150,
-              color: "#ffffff",
-              opacity: 0.4,
-              width: 1,
+              color: "#000000",
+              opacity: 0.1,
+              width: 0,
             },
             move: {
               enable: true,
