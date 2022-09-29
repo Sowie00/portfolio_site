@@ -1,11 +1,81 @@
 import React from "react";
 import Link from "next/link";
+import useInput from "../../hooks/use-input";
 
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+import { FcCheckmark } from "react-icons/fc";
 const Contact = () => {
+  const {
+    value: enteredName,
+    isValid: enteredNameIsValid,
+    hasError: nameInputHasError,
+    valueChangeHandler: nameChangedHandler,
+    inputBlurHandler: nameBlurHandler,
+    reset: resetNameInput,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredEmail,
+    isValid: enteredEmailIsValid,
+    hasError: emailInputHasError,
+    valueChangeHandler: emailChangedHandler,
+    inputBlurHandler: emailBlurHandler,
+    reset: resetEmailInput,
+  } = useInput((value) => value.includes("@"));
+
+  const {
+    value: enteredPhone,
+    isValid: enteredPhoneIsValid,
+    hasError: phoneInputHasError,
+    valueChangeHandler: phoneChangedHandler,
+    inputBlurHandler: phoneBlurHandler,
+    reset: resetPhoneInput,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredSubject,
+    isValid: enteredSubjectIsValid,
+    hasError: subjectInputHasError,
+    valueChangeHandler: subjectChangedHandler,
+    inputBlurHandler: subjectBlurHandler,
+    reset: resetSubjectInput,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredMessage,
+    isValid: enteredMessageIsValid,
+    hasError: messageInputHasError,
+    valueChangeHandler: messageChangedHandler,
+    inputBlurHandler: messageBlurHandler,
+    reset: resetMessageInput,
+  } = useInput((value) => value.trim() !== "");
+
+  let formIsValid = false;
+
+  if (
+    enteredNameIsValid &&
+    enteredEmailIsValid &&
+    enteredPhoneIsValid &&
+    enteredSubjectIsValid &&
+    enteredMessageIsValid
+  ) {
+    formIsValid = true;
+  }
+
   const submitFormHandler = (e) => {
     e.preventDefault();
+
+    if (
+      !enteredNameIsValid &&
+      !enteredEmailIsValid &&
+      !enteredPhoneIsValid &&
+      !enteredSubjectIsValid &&
+      !enteredMessageIsValid
+    ) {
+      return;
+    }
+
     const formData = {};
     Array.from(e.currentTarget.elements).forEach((field) => {
       if (!field.name) return;
@@ -15,8 +85,76 @@ const Contact = () => {
       method: "POST",
       body: JSON.stringify(formData),
     });
-    e.target.reset();
+
+    resetNameInput();
+    resetEmailInput();
+    resetMessageInput();
+    resetPhoneInput();
+    resetSubjectInput();
   };
+  ``;
+
+  let nameInputClasses = "";
+  let emailInputClasses = "";
+  let subjectInputClasses = "";
+  let phoneInputClasses = "";
+  let messageInputClasses = "";
+
+  if (nameInputHasError) {
+    nameInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white";
+  } else if (enteredNameIsValid) {
+    nameInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white";
+  } else {
+    nameInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+  }
+
+  if (phoneInputHasError) {
+    phoneInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white";
+  } else if (enteredPhoneIsValid) {
+    phoneInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white";
+  } else {
+    phoneInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+  }
+
+  if (emailInputHasError) {
+    emailInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white";
+  } else if (enteredEmailIsValid) {
+    emailInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white";
+  } else {
+    emailInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+  }
+
+  if (subjectInputHasError) {
+    subjectInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white";
+  } else if (enteredSubjectIsValid) {
+    subjectInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white";
+  } else {
+    subjectInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+  }
+
+  if (messageInputHasError) {
+    messageInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white";
+  } else if (enteredMessageIsValid) {
+    messageInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white";
+  } else {
+    messageInputClasses =
+      "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+  }
+
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
@@ -74,8 +212,22 @@ const Contact = () => {
                       type="text"
                       id="name"
                       name="name"
-                      className="border-2 rounded-lg p-3 flex border-gray-300 bg-white"
+                      onChange={nameChangedHandler}
+                      onBlur={nameBlurHandler}
+                      value={enteredName}
+                      className={nameInputClasses}
                     />
+                    {nameInputHasError && (
+                      <p className="text-red-500">Name must not be empty!</p>
+                    )}
+                    {enteredNameIsValid && (
+                      <p className="text-green-400 flex p-1">
+                        Looks good
+                        <div className="ml-2 flex items-center">
+                          <FcCheckmark size={18} />
+                        </div>
+                      </p>
+                    )}
                   </div>
                   <div className="flex flex-col">
                     <label
@@ -88,8 +240,25 @@ const Contact = () => {
                       type="text"
                       id="phone"
                       name="phone"
-                      className="border-2 rounded-lg p-3 flex border-gray-300 bg-white"
+                      onChange={phoneChangedHandler}
+                      onBlur={phoneBlurHandler}
+                      value={enteredPhone}
+                      className={phoneInputClasses}
                     />
+                    {phoneInputHasError && (
+                      <p className="text-red-500">
+                        Phone number must be 10 digits and in the form
+                        XXX-XXX-XXXX or XXX XXX XXXX
+                      </p>
+                    )}
+                    {enteredPhoneIsValid && (
+                      <p className="text-green-400 flex p-1">
+                        Looks good
+                        <div className="ml-2 flex items-center">
+                          <FcCheckmark size={18} />
+                        </div>
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="flex flex-col py-2">
@@ -103,8 +272,24 @@ const Contact = () => {
                     id="email"
                     type="email"
                     name="email"
-                    className="border-2 rounded-lg p-3 flex border-gray-300 bg-white"
+                    onChange={emailChangedHandler}
+                    onBlur={emailBlurHandler}
+                    value={enteredEmail}
+                    className={emailInputClasses}
                   />
+                  {emailInputHasError && (
+                    <p className="text-red-500">
+                      Email field cannot be empty and must include '@'
+                    </p>
+                  )}
+                  {enteredEmailIsValid && (
+                    <p className="text-green-400 flex p-1">
+                      Looks good
+                      <div className="ml-2 flex items-center">
+                        <FcCheckmark size={18} />
+                      </div>
+                    </p>
+                  )}
                 </div>
                 <div className="flex flex-col py-2">
                   <label
@@ -117,8 +302,24 @@ const Contact = () => {
                     id="subject"
                     type="text"
                     name="subject"
-                    className="border-2 rounded-lg p-3 flex border-gray-300 bg-white"
+                    onChange={subjectChangedHandler}
+                    onBlur={subjectBlurHandler}
+                    value={enteredSubject}
+                    className={subjectInputClasses}
                   />
+                  {subjectInputHasError && (
+                    <p className="text-red-500">
+                      Subject field cannot be empty!
+                    </p>
+                  )}
+                  {enteredSubjectIsValid && (
+                    <p className="text-green-400 flex p-1">
+                      Looks good
+                      <div className="ml-2 flex items-center">
+                        <FcCheckmark size={18} />
+                      </div>
+                    </p>
+                  )}
                 </div>
                 <div className="flex flex-col py-2">
                   <label
@@ -128,13 +329,34 @@ const Contact = () => {
                     message
                   </label>
                   <textarea
-                    className="border-2 rounded-lg p-3 border-gray-300 bg-white"
+                    className={messageInputClasses}
                     name="message"
                     id="message"
+                    onChange={messageChangedHandler}
+                    onBlur={messageBlurHandler}
+                    value={enteredMessage}
                     rows="10"
                   ></textarea>
+                  {messageInputHasError && (
+                    <p className="text-red-500">
+                      Message field cannot be empty!
+                    </p>
+                  )}
+                  {enteredMessageIsValid && (
+                    <p className="text-green-400 flex p-1">
+                      Looks good
+                      <div className="ml-2 flex items-center">
+                        <FcCheckmark size={18} />
+                      </div>
+                    </p>
+                  )}
                 </div>
-                <button className="w-full p-4 mt-4">Send Message</button>
+                <button
+                  disabled={!formIsValid}
+                  className="w-full p-4 mt-4 cursor-not-allowed"
+                >
+                  Send Message
+                </button>
               </form>
             </div>
           </div>

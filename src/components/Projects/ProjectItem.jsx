@@ -20,7 +20,7 @@ const ProjectItem = ({ title, image, tags, projectId }) => {
           {tags.map((tag, i) => {
             return (
               <div className="rounded-xl px-2 py-1 mx-2 bg-[#5651e5]">
-                <li id={i} className="text-sm text-white">
+                <li id={i} className="text-sm text-black">
                   {tag}
                 </li>
               </div>
@@ -28,7 +28,7 @@ const ProjectItem = ({ title, image, tags, projectId }) => {
           })}
         </ul>
         <Link key={projectId} href={`/projects/${projectId}`}>
-          <p className="text-center py-3 rounded-lg bg-[#5651e5] text-white text-lg cursor-pointer">
+          <p className="text-center py-3 rounded-lg bg-[#5651e5] text-black text-lg cursor-pointer">
             Learn More
           </p>
         </Link>

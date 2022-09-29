@@ -16,9 +16,9 @@ const Main = () => {
     <div id="home" className="w-full h-screen text-center">
       <div className="relative max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
-          <h1 className="py-4 text-[#5651ec]">
+          <h1 className="py-4 text-[#5651e1]">
             <span>{text}</span>
-            <Cursor cursorColor="#5651ec" />
+            <Cursor cursorColor="#5651e1" />
           </h1>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-10">
             <a
@@ -26,8 +26,8 @@ const Main = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <div className="rounded-full animate-bounce shadow-lg shadow-gray-400 p-6 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
-                <FaLinkedinIn />
+              <div className="rounded-full bg-[#ecf0f3] shadow-lg shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
+                <FaLinkedinIn color="#5651e1" size={20} />
               </div>
             </a>
             <a
@@ -35,18 +35,18 @@ const Main = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <div className="rounded-full animate-bounce shadow-lg shadow-gray-400 p-6 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
-                <FaGithub />
+              <div className="rounded-full bg-[##ecf0f3] shadow-lg shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
+                <FaGithub color="#5651e1" size={20} />
               </div>
             </a>
             <a href="/#contact">
-              <div className="rounded-full animate-bounce shadow-lg shadow-gray-400 p-6 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
-                <AiOutlineMail />
+              <div className="rounded-full bg-[##ecf0f3] shadow-lg shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
+                <AiOutlineMail color="#5651e1" size={20} />
               </div>
             </a>
 
-            <div className="rounded-full animate-bounce shadow-lg shadow-gray-400 p-6 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
-              <BsPersonLinesFill />
+            <div className="rounded-full bg-[##ecf0f3] shadow-lg shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
+              <BsPersonLinesFill color="#5651e1" size={20} />
             </div>
           </div>
           <motion.div
@@ -61,7 +61,7 @@ const Main = () => {
           >
             <div className="flex justify-center items-center">
               <a href="/#about">
-                <button>
+                <button className="hover:shadow-orange-600">
                   Learn More{" "}
                   <span className="px-2 animate-bounce">
                     <AiOutlineDown />

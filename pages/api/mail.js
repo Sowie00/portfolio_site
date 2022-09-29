@@ -12,9 +12,9 @@ const htmlTemplate = (data) => {
   <p>Someone contacted you through your portfolio page!</p>
   <h3>Contact Details</h3>
   <ul>
-    <li>Name: ${data.name}</li>
-    <li>Email: ${data.email}</li>
-    <li>Phone: ${data.phone}</li>
+    <li><b>Name</b>: ${data.name}</li>
+    <li><b>Email</b>: ${data.email}</li>
+    <li><b>Phone:</b> ${data.phone}</li>
   </ul>
   <h3>Message</h3>
   <p>Subject: ${data.subject}</p>
