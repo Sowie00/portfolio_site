@@ -5,6 +5,7 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsPersonLinesFill } from "react-icons/bs";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Main = () => {
   const [text, count] = useTypewriter({
@@ -41,24 +42,24 @@ const Main = () => {
                 <FaGithub color="#5651e1" size={20} />
               </div>
             </a>
-            <a href="/#contact">
+            <Link href="/#contact">
               <div className="rounded-full bg-[#ecf0f3] shadow-lg mr-3 shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
                 <AiOutlineMail color="#5651e1" size={20} />
               </div>
-            </a>
+            </Link>
             <div className="rounded-full bg-[#ecf0f3] shadow-lg shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
               <BsPersonLinesFill color="#5651e1" size={20} />
             </div>
           </div>
           <div className="flex justify-center items-center">
-            <a href="/#about">
+            <Link href="/#about">
               <button className="w-full p-4 text-md flex justify-center items-center cursor-pointer transition-all ease-in duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
                 Learn More{" "}
                 <span className="px-2 animate-bounce">
                   <AiOutlineDown />
                 </span>
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

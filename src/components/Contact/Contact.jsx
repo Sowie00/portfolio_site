@@ -287,7 +287,7 @@ const Contact = () => {
                   />
                   {emailInputHasError && (
                     <p className="text-red-500">
-                      Email field cannot be empty and must include '@'
+                      Email field cannot be empty and must include &apos;@&apos;
                     </p>
                   )}
                   {enteredEmailIsValid && (

@@ -19,12 +19,7 @@ const Skills = (props) => {
               <div className="flex h-full w-full items-center rounded-md justify-center bg-white">
                 <div className="grid grid-cols-2 gap-4 justify-center items-center">
                   <div className="m-auto animate-bounce" key={item.id}>
-                    <Image
-                      src={item.image}
-                      width="64px"
-                      height="64px"
-                      alt="/"
-                    />
+                    <Image src={item.image} width="64px" height="64px" alt="" />
                   </div>
                   <div
                     key={item.skillName}
