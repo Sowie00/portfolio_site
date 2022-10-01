@@ -11,6 +11,7 @@ const ProjectItem = ({ title, image, tags, projectId }) => {
         src={image}
         width="800px"
         height="700px"
+        alt=""
       />
       <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
         <h3 className="text-2xl text-black tracking-wider text-center">
@@ -19,7 +20,10 @@ const ProjectItem = ({ title, image, tags, projectId }) => {
         <ul className="flex justify-around p-2 my-5">
           {tags.map((tag, i) => {
             return (
-              <div className="rounded-xl px-2 py-1 mx-2 bg-gradient-to-r from-[#380036] to-[#0CBABA]">
+              <div
+                key={i}
+                className="rounded-xl px-2 py-1 mx-2 bg-gradient-to-r from-[#380036] to-[#0CBABA]"
+              >
                 <li id={i} className="text-sm text-white">
                   {tag}
                 </li>

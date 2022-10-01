@@ -46,7 +46,6 @@ const Main = () => {
                 <AiOutlineMail color="#5651e1" size={20} />
               </div>
             </a>
-
             <div className="rounded-full bg-[#ecf0f3] shadow-lg shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
               <BsPersonLinesFill color="#5651e1" size={20} />
             </div>

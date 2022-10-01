@@ -12,7 +12,10 @@ const Skills = (props) => {
         <h2 className="py-4">What I Can Do</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skillsData.map((item) => (
-            <div className=" h-36 shadow-xl shadow-gray-200 p-2 bg-gradient-to-r from-[#89D4CF] to-[#734AE8] rounded-xl transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 hover:ease-in duration-300">
+            <div
+              key={item}
+              className=" h-36 shadow-xl shadow-gray-200 p-2 bg-gradient-to-r from-[#89D4CF] to-[#734AE8] rounded-xl transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 hover:ease-in duration-300"
+            >
               <div className="flex h-full w-full items-center rounded-md justify-center bg-white">
                 <div className="grid grid-cols-2 gap-4 justify-center items-center">
                   <div className="m-auto animate-bounce" key={item.id}>

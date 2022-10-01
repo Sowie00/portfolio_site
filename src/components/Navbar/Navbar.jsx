@@ -46,8 +46,7 @@ const Navbar = () => {
         }
       >
         <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-          <a href="/">
-            {" "}
+          <Link href="/">
             <Image
               className=" transition-all hover:ease-in duration-300 hover:scale-105 cursor-pointer hover:shadow-lg shadow-indigo-500"
               src="/../public/assets/logo.png"
@@ -55,8 +54,7 @@ const Navbar = () => {
               width="50"
               height="50"
             />
-          </a>
-
+          </Link>
           <div>
             <ul style={{ color: `#5651e1` }} className="hidden md:flex">
               <Link href="/">
@@ -126,7 +124,7 @@ const Navbar = () => {
               </div>
               <div className="border-b border-gray-300 my-4">
                 <p className="w-[85%] md:w-[90%] py-4 text-[#5651e1]">
-                  LET'S COLLABORATE
+                  LET&apos;S COLLABORATE
                 </p>
               </div>
             </div>
@@ -176,7 +174,7 @@ const Navbar = () => {
               </ul>
               <div className="pt-40">
                 <p className="uppercase tracking-wide text-[#5651e5]">
-                  Let's Connect
+                  Let&apos;s Connect
                 </p>
                 <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                   <a
