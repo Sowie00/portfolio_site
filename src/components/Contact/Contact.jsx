@@ -99,6 +99,7 @@ const Contact = () => {
   let subjectInputClasses = "";
   let phoneInputClasses = "";
   let messageInputClasses = "";
+  let buttonClasses = "";
 
   if (nameInputHasError) {
     nameInputClasses =
@@ -153,6 +154,13 @@ const Contact = () => {
   } else {
     messageInputClasses =
       "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+  }
+
+  if (formIsValid) {
+    buttonClasses =
+      "w-full p-4 mt-4 cursor-pointer transition-all ease-in duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500";
+  } else {
+    buttonClasses = "w-full p-4 mt-4 cursor-not-allowed disabled:text-gray-500";
   }
 
   return (
@@ -351,10 +359,7 @@ const Contact = () => {
                     </p>
                   )}
                 </div>
-                <button
-                  disabled={!formIsValid}
-                  className="w-full p-4 mt-4 cursor-not-allowed"
-                >
+                <button disabled={!formIsValid} className={buttonClasses}>
                   Send Message
                 </button>
               </form>

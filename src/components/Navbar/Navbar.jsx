@@ -5,16 +5,10 @@ import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsPersonLinesFill } from "react-icons/bs";
 import { useRouter } from "next/router";
-import { useTheme } from "next-themes";
-import BackgroundAnimation from "../BackgroundAnimation/BackgroundAnimation";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState("#ecf0f3");
-  const [linkColor, setLinkColor] = useState("#1f2937");
-  const [isTransparent, setIsTransparent] = useState(true);
-  const router = useRouter();
+  const [background, setBackground] = useState(true);
 
   const handleNav = () => {
     setNav(!nav);
@@ -31,34 +25,26 @@ const Navbar = () => {
   // }, [router]);
 
   useEffect(() => {
-    const handleShadow = () => {
-      if (window.scrollY >= 90) {
-        setShadow(true);
+    const handleBackground = () => {
+      if (window.scrollY >= 200) {
+        setBackground(true);
       } else {
-        setShadow(false);
+        setBackground(false);
       }
     };
 
-    window.addEventListener("scroll", handleShadow);
-  }, []);
-
-  useEffect(() => {
-    const handleTransparentAndShadow = () => {
-      if (window.scrollY >= 100) {
-        setIsTransparent(false);
-        setShadow(true);
-      } else {
-        setIsTransparent(true);
-        setShadow(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleTransparentAndShadow);
+    window.addEventListener("scroll", handleBackground);
   }, []);
 
   return (
     <>
-      <div className="fixed w-full h-20 z-[100]">
+      <div
+        className={
+          background
+            ? "bg-[#ecf0f3] shadow-xl shadow-gray-400 fixed w-full h-20 z-[100]"
+            : "fixed w-full h-20 z-[100]"
+        }
+      >
         <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
           <a href="/">
             {" "}
@@ -193,15 +179,32 @@ const Navbar = () => {
                   Let's Connect
                 </p>
                 <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200 hover:shadow-xl hover:shadow-indigo-500">
-                    <FaLinkedinIn className="transition-all hover:text-[#5651e1]" />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200 hover:shadow-xl hover:shadow-indigo-500">
-                    <FaGithub className="transition-all hover:text-[#5651e1]" />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200 hover:shadow-xl hover:shadow-indigo-500">
-                    <AiOutlineMail className="transition-all hover:text-[#5651e1]" />
-                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/sourav-pandya-a999a7204/"
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => setNav(false)}
+                  >
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200 hover:shadow-xl hover:shadow-indigo-500">
+                      <FaLinkedinIn className="transition-all hover:text-[#5651e1]" />
+                    </div>
+                  </a>
+                  <a
+                    href="https://github.com/Sowie00"
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => setNav(false)}
+                  >
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200 hover:shadow-xl hover:shadow-indigo-500">
+                      <FaGithub className="transition-all hover:text-[#5651e1]" />
+                    </div>
+                  </a>
+                  <Link href="/#contact" onClick={() => setNav(false)}>
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200 hover:shadow-xl hover:shadow-indigo-500">
+                      <AiOutlineMail className="transition-all hover:text-[#5651e1]" />
+                    </div>
+                  </Link>
+
                   <div className="rounded-full animate-button shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200 hover:shadow-xl hover:shadow-indigo-500">
                     <BsPersonLinesFill className="transition-all hover:text-[#5651e1]" />
                   </div>

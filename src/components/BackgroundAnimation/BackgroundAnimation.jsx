@@ -59,21 +59,16 @@ const BackgroundAnimation = () => {
               },
             },
             color: {
-              value: ["#5651ec", "#0c116d", "#000003", "#080b4a", "#1721d7"],
+              value: ["#5651ec", "#0c116d", "#080b4a", "#1721d7"],
             },
             shape: {
               type: "circle",
               stroke: {
-                width: 0,
+                width: 1,
                 color: "#000000",
               },
               polygon: {
-                nb_sides: 5,
-              },
-              image: {
-                src: "img/github.svg",
-                width: 100,
-                height: 100,
+                nb_sides: 10,
               },
             },
             opacity: {
@@ -99,9 +94,9 @@ const BackgroundAnimation = () => {
             line_linked: {
               enable: true,
               distance: 150,
-              color: "#000000",
-              opacity: 0.1,
-              width: 0,
+              color: "",
+              opacity: 1,
+              width: 1,
             },
             move: {
               enable: true,

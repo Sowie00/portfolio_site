@@ -29,8 +29,8 @@ const Details = ({ project }) => {
   console.log(project);
   return (
     <div className="w-full">
-      <div className="w-screen h-[30vh] lg:h-[40vh] relative">
-        <div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/80 z-10" />
+      <div className="w-screen h-[50vh] relative">
+        <div className="absolute top-0 left-0 w-full h-[50vh] bg-black/80 z-10" />
         <Image
           className="absolute z-1"
           layout="fill"
@@ -48,11 +48,11 @@ const Details = ({ project }) => {
         <div className="col-span-4">
           <p className="text-xl tracking-widest text-[#5651ec]">Project</p>
           <h2 className="pb-6">Overview</h2>
-          <p>{project.description}</p>
-          <button className="px-8 py-2 mt-4 mr-8 bg-gradient-to-r from-[#89d4cf] to-[#734AE8] text-white">
+          <p className="text-xl">{project.description}</p>
+          <button className="px-8 py-2 mt-4 mr-8 bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white transition-all hover:shadow-lg hover:shadow-teal-400 duration-300 hover:-translate-y-1">
             Demo
           </button>
-          <button className="px-8 py-2 mt-4 bg-gradient-to-r from-[#89d4cf] to-[#734AE8] text-white">
+          <button className=" px-8 py-2 mt-4 bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white transition-all hover:shadow-lg hover:shadow-teal-400 duration-300 hover:-translate-y-1">
             Code
           </button>
         </div>
