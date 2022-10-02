@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [background, setBackground] = useState(true);
+  const [background, setBackground] = useState(false);
 
   const handleNav = () => {
     setNav(!nav);
@@ -26,7 +26,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleBackground = () => {
-      if (window.scrollY >= 200) {
+      if (window.scrollY >= 350) {
         setBackground(true);
       } else {
         setBackground(false);

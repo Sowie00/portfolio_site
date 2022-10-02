@@ -1,27 +1,30 @@
 import Image from "next/image";
 import React from "react";
-import { getProject, getProjects } from "../../lib/helper";
+import Project from "../../models/projectModel";
 import { GoArrowSmallRight } from "react-icons/go";
+import connectMongo from "../../database/mongodb";
 
-export const getStaticPaths = async () => {
-  const data = await getProjects();
-  const paths = data.map((project) => {
-    return {
-      params: { projectId: project._id.toString() },
-    };
-  });
+// export const getStaticPaths = async () => {
+//   const data = await getProjects();
+//   const paths = data.map((project) => {
+//     return {
+//       params: { projectId: project._id.toString() },
+//     };
+//   });
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
+  connectMongo();
   const projectId = context.params.projectId;
-  const data = await getProject(projectId);
+  const data = await Project.findById(projectId);
+  console.log(data);
   return {
-    props: { project: data },
+    props: { project: JSON.parse(JSON.stringify(data)) },
   };
 };
 

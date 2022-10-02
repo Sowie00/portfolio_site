@@ -1,8 +1,6 @@
-import { ObjectId } from "mongodb";
 import { Schema, model, models } from "mongoose";
 
 const projectSchema = new Schema({
-  id: ObjectId,
   title: String,
   description: String,
   image: String,
