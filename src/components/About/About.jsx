@@ -26,13 +26,13 @@ const About = () => {
           <h2 className="p-2">Who I Am</h2>
           <p className="p-2 text-gray-600">
             Passionately committed to the philosophy of focusing on the craft,
-            I'm a full stack developer with an extensive passion for JavaScript,
-            React and all things full-stack development. With abundance of
-            technologies with new technologies emerging day by day, my passion
-            for full-stack development is never-ending and drives my excitement
-            to learn new technologies. When I'm not writing code, I like to
-            unwind by playing video games, going to the gym and reading a good
-            book.
+            I&apos;m a full stack developer with an extensive passion for
+            JavaScript, React and all things full-stack development. With
+            abundance of technologies with new technologies emerging day by day,
+            my passion for full-stack development is never-ending and drives my
+            excitement to learn new technologies. When I&apos;m not writing
+            code, I like to unwind by playing video games, going to the gym and
+            reading a good book.
           </p>
         </motion.div>
         <motion.div
