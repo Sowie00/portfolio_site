@@ -6,6 +6,7 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsPersonLinesFill } from "react-icons/bs";
 import { useRouter } from "next/router";
 import logoImg from "../../../public/assets/logo.png";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -47,51 +48,79 @@ const Navbar = () => {
         }
       >
         <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-          <Link href="/">
-            <Image
-              className=" transition-all hover:ease-in duration-300 hover:scale-105 cursor-pointer hover:shadow-lg shadow-indigo-500"
-              src={logoImg}
-              alt="/"
-              width="50"
-              height="50"
-            />
-          </Link>
-          <div>
-            <ul style={{ color: `#5651e1` }} className="hidden md:flex">
-              <Link href="/">
-                <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
-                  Home
-                </li>
-              </Link>
-              <Link href="/#about">
-                <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
-                  About
-                </li>
-              </Link>
-              <Link href="/#skills">
-                <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
-                  Skills
-                </li>
-              </Link>
-              <Link href="/#projects">
-                <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
-                  Projects
-                </li>
-              </Link>
-              <Link href="/#contact">
-                <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
-                  Contact
-                </li>
-              </Link>
-            </ul>
-            <div onClick={handleNav} className="md:hidden">
-              <AiOutlineMenu
-                className="cursor-pointer transition-all hover:scale-105 hover:ease-in duration-300"
-                color="#565ec1"
-                size={25}
+          <motion.div
+            initial={{
+              x: -500,
+              opacity: 0,
+              scale: 0.5,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{ duration: 1.5, delay: 1.5 }}
+          >
+            <Link href="/">
+              <Image
+                className=" transition-all hover:ease-in duration-300 hover:scale-105 cursor-pointer hover:shadow-lg shadow-indigo-500"
+                src={logoImg}
+                alt="/"
+                width="50"
+                height="50"
               />
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{
+              x: 500,
+              opacity: 0,
+              scale: 0.5,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{ duration: 1.5, delay: 1.0 }}
+          >
+            <div>
+              <ul style={{ color: `#5651e1` }} className="hidden md:flex">
+                <Link href="/">
+                  <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
+                    Home
+                  </li>
+                </Link>
+                <Link href="/#about">
+                  <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
+                    About
+                  </li>
+                </Link>
+                <Link href="/#skills">
+                  <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
+                    Skills
+                  </li>
+                </Link>
+                <Link href="/#projects">
+                  <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
+                    Projects
+                  </li>
+                </Link>
+                <Link href="/#contact">
+                  <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
+                    Contact
+                  </li>
+                </Link>
+              </ul>
+              <div onClick={handleNav} className="md:hidden">
+                <AiOutlineMenu
+                  className="cursor-pointer transition-all hover:scale-105 hover:ease-in duration-300"
+                  color="#565ec1"
+                  size={25}
+                />
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div
@@ -203,10 +232,6 @@ const Navbar = () => {
                       <AiOutlineMail className="transition-all hover:text-[#5651e1]" />
                     </div>
                   </Link>
-
-                  <div className="rounded-full animate-button shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200 hover:shadow-xl hover:shadow-indigo-500">
-                    <BsPersonLinesFill className="transition-all hover:text-[#5651e1]" />
-                  </div>
                 </div>
               </div>
             </div>
