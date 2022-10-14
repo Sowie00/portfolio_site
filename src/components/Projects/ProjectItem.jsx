@@ -30,11 +30,13 @@ const ProjectItem = ({ title, image, tags, projectId }) => {
             );
           })}
         </ul>
-        <Link key={projectId} href={`/projects/${projectId}`}>
-          <p className="text-center py-3 rounded-lg bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white text-md cursor-pointer">
-            Learn More
-          </p>
-        </Link>
+        <div>
+          <Link key={projectId} href={`/projects/${projectId}`}>
+            <p className="text-center py-3 rounded-lg bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white text-md cursor-pointer">
+              Learn More
+            </p>
+          </Link>
+        </div>
       </div>
     </div>
   );
