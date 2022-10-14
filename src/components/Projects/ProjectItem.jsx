@@ -23,7 +23,7 @@ const ProjectItem = ({ title, image, tags, projectId }) => {
                 key={i}
                 className="rounded-xl px-2 py-1 mx-2 bg-gradient-to-r from-[#380036] to-[#0CBABA]"
               >
-                <li id={i} className="text-sm text-white">
+                <li id={i} className=" text-xs text-white">
                   {tag}
                 </li>
               </div>
@@ -31,7 +31,7 @@ const ProjectItem = ({ title, image, tags, projectId }) => {
           })}
         </ul>
         <Link key={projectId} href={`/projects/${projectId}`}>
-          <p className="text-center py-3 rounded-lg bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white text-lg cursor-pointer">
+          <p className="text-center py-3 rounded-lg bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white text-md cursor-pointer">
             Learn More
           </p>
         </Link>

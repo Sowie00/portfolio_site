@@ -31,6 +31,6 @@ html {
     @apply cursor-pointer;
   }
   button {
-    @apply bg-none text-center rounded-xl text-[#5651e5] m-2 px-10 py-2 uppercase;
+    @apply bg-none text-center rounded-xl text-[#5651e5] m-2 px-5 py-2 uppercase;
   }
 }
