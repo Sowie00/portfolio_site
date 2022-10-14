@@ -56,7 +56,7 @@ const Main = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <div className="rounded-full bg-[#ecf0f3] shadow-lg shadow-gray-400 p-4 cursor-pointer mr-3 transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
+                <div className="rounded-full bg-[#ecf0f3] shadow-lg shadow-gray-400 p-4 cursor-pointer mr-3 transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 duration-500">
                   <FaLinkedinIn color="#5651e1" size={20} />
                 </div>
               </a>

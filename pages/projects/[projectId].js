@@ -52,12 +52,16 @@ const Details = ({ project }) => {
           <p className="text-xl tracking-widest text-[#5651ec]">Project</p>
           <h2 className="pb-6">Overview</h2>
           <p className="text-xl">{project.description}</p>
-          <button className="px-8 py-2 mt-4 mr-8 bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white transition-all hover:shadow-lg hover:shadow-teal-400 duration-300 hover:-translate-y-1">
-            Demo
-          </button>
-          <button className=" px-8 py-2 mt-4 bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white transition-all hover:shadow-lg hover:shadow-teal-400 duration-300 hover:-translate-y-1">
-            Code
-          </button>
+          <a href={project.visit}>
+            <button className="px-8 py-2 mt-4 mr-8 bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white transition-all hover:shadow-lg hover:shadow-teal-400 duration-300 hover:-translate-y-1">
+              Demo
+            </button>
+          </a>
+          <a href={project.source}>
+            <button className=" px-8 py-2 mt-4 bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white transition-all hover:shadow-lg hover:shadow-teal-400 duration-300 hover:-translate-y-1">
+              Code
+            </button>
+          </a>
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-indigo-500 rounded-xl p-4">
           <div className="p-2">
