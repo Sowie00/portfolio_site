@@ -141,7 +141,7 @@ const Navbar = () => {
               <div className="flex w-full items-center justify-between">
                 <Image
                   className="cursor-pointer hover:scale-105 transition-all hover:ease-in duration-300"
-                  src="/../public/assets/logo.png"
+                  src={logoImg}
                   width="50"
                   height="50"
                 ></Image>
