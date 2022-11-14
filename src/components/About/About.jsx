@@ -5,20 +5,32 @@ import aboutImg from "../../../public/assets/about.png";
 
 const About = () => {
   return (
-    <div id="about" className="w-full md:h-screen p-2 flex items-center py-16">
+    <div id="about" className="w-full md:h-4/6 p-2 flex items-center py-16">
       <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
         <motion.div
-          className="col-span-2"
           initial={{
             x: -200,
             opacity: 0,
           }}
           transition={{
             duration: 2.0,
-            delay: 1.5,
           }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+        >
+          <div className="w-full h-auto m-auto rounded-xl flex items-center justify-center p-3 hover:scale-105 ease-in duration-300">
+            <Image src={aboutImg} width={2000} height={2000} />
+          </div>
+        </motion.div>
+        <motion.div
+          className="col-span-1 sm:col-span-2"
+          initial={{
+            opacity: 0,
+          }}
+          transition={{
+            duration: 2.0,
+            delay: 1.0,
+          }}
+          whileInView={{ opacity: 1 }}
         >
           <p className="uppercase p-3 text-xl tracking-widest text-[#5651e5]">
             About
@@ -34,21 +46,6 @@ const About = () => {
             code, I like to unwind by playing video games, going to the gym and
             reading a good book.
           </p>
-        </motion.div>
-        <motion.div
-          initial={{
-            x: 200,
-            opacity: 0,
-          }}
-          transition={{
-            duration: 2.0,
-          }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="w-full h-auto m-auto rounded-xl flex items-center justify-center p-3 hover:scale-105 ease-in duration-300">
-            <Image src={aboutImg} width={2000} height={2000} />
-          </div>
         </motion.div>
       </div>
     </div>

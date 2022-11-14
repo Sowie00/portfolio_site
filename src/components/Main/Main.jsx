@@ -14,8 +14,8 @@ const Main = () => {
     delaySpeed: 3000,
   });
   return (
-    <div id="home" className="w-full h-screen text-center">
-      <div className="relative w-full h-full p-2 flex justify-center items-center">
+    <div id="home" className="w-screen h-screen text-center">
+      <div className="w-full h-full p-2 flex justify-center items-center">
         <motion.div
           initial={{
             y: -500,

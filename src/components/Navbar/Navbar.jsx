@@ -87,29 +87,39 @@ const Navbar = () => {
             <div>
               <ul style={{ color: `#5651e1` }} className="hidden md:flex">
                 <Link href="/">
-                  <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
-                    Home
-                  </li>
+                  <a>
+                    <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
+                      Home
+                    </li>
+                  </a>
                 </Link>
                 <Link href="/#about">
-                  <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
-                    About
-                  </li>
+                  <a>
+                    <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
+                      About
+                    </li>
+                  </a>
                 </Link>
                 <Link href="/#skills">
-                  <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
-                    Skills
-                  </li>
+                  <a>
+                    <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
+                      Skills
+                    </li>
+                  </a>
                 </Link>
                 <Link href="/#projects">
-                  <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
-                    Projects
-                  </li>
+                  <a>
+                    <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
+                      Projects
+                    </li>
+                  </a>
                 </Link>
                 <Link href="/#contact">
-                  <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
-                    Contact
-                  </li>
+                  <a>
+                    <li className="ml-10 text-sm font-bold uppercase py-4 no-underline relative  transition-transform duration-100 ease-in-out after:left-0 after:w-full after:h-px after:-bottom-0.5 after:scale-x-0 origin-left hover:after:scale-x-100 before:absolute before:bg-[#5651e1] before:transition-transform before:duration-500 after:absolute after:bg-[#5651e1] after:transition-transform after:duration-500 hover:scale-105">
+                      Contact
+                    </li>
+                  </a>
                 </Link>
               </ul>
               <div onClick={handleNav} className="md:hidden">

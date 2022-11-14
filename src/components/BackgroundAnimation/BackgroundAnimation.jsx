@@ -16,7 +16,7 @@ const BackgroundAnimation = () => {
   }, []);
 
   return (
-    <div className="z-[-1] relative">
+    <div className="z-[-1] relative h-full w-full">
       <Particles
         id="tsparticles"
         init={particlesInit}

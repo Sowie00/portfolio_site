@@ -10,11 +10,20 @@ const Skills = (props) => {
           Skills
         </p>
         <h2 className="py-4">What I Can Do</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {skillsData.map((item) => (
-            <div
+            <motion.div
               key={item._id}
-              className=" h-36 shadow-xl shadow-gray-200 p-2 bg-gradient-to-r from-[#89D4CF] to-[#734AE8] rounded-full transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 hover:ease-in duration-300"
+              className=" h-36 w-full sm: shadow-xl shadow-gray-200 p-2 bg-gradient-to-r from-[#89D4CF] to-[#734AE8] rounded-full transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 hover:ease-in duration-300"
+              initial={{
+                opacity: 0,
+              }}
+              transition={{
+                duration: 2.0,
+                delay: 1.0,
+              }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
             >
               <motion.div
                 key={item._id}
@@ -24,6 +33,7 @@ const Skills = (props) => {
                 }}
                 transition={{
                   duration: 1.5,
+                  delay: 1.5,
                 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -40,7 +50,7 @@ const Skills = (props) => {
                   </div>
                 </div>
               </motion.div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
