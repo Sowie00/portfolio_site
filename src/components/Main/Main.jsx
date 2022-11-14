@@ -50,7 +50,7 @@ const Main = () => {
             }}
             transition={{ duration: 1.0, delay: 3.0 }}
           >
-            <div className="flex items-center justify-between max-w-[330px] m-auto py-10">
+            <div className="flex items-center justify-between max-w-[330px] m-auto py-14">
               <a
                 href="https://www.linkedin.com/in/sourav-pandya-a999a7204/"
                 target="_blank"

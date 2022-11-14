@@ -40,7 +40,7 @@ const Skills = (props) => {
               >
                 <div className="grid grid-cols-2 gap-4 justify-center items-center">
                   <div className="m-auto">
-                    <Image src={item.image} width="64px" height="64px" alt="" />
+                    <Image src={item.image} width="48px" height="48px" alt="" />
                   </div>
                   <div
                     key={item.skillName}
