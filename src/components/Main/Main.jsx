@@ -1,15 +1,15 @@
-import React from "react";
-import { AiOutlineDown } from "react-icons/ai";
-import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from "react-icons/ai";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { BsPersonLinesFill } from "react-icons/bs";
-import { Cursor, useTypewriter } from "react-simple-typewriter";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import React from 'react';
+import { AiOutlineDown } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from 'react-icons/ai';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import { BsPersonLinesFill } from 'react-icons/bs';
+import { Cursor, useTypewriter } from 'react-simple-typewriter';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Main = () => {
   const [text, count] = useTypewriter({
-    words: ["Hi, My Name is Sourav", "I am a full-stack developer."],
+    words: ['Hi, My Name is Sourav', 'I am a full-stack developer.'],
     loop: true,
     delaySpeed: 3000,
   });
@@ -56,7 +56,7 @@ const Main = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <div className="rounded-full bg-[#ecf0f3] shadow-lg shadow-gray-400 p-4 cursor-pointer mr-3 transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 duration-500">
+                <div className="rounded-full bg-[#FFE4C4] shadow-lg shadow-gray-400 p-4 cursor-pointer mr-3 transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 duration-500">
                   <FaLinkedinIn color="#5651e1" size={20} />
                 </div>
               </a>
@@ -65,12 +65,12 @@ const Main = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <div className="rounded-full bg-[#ecf0f3] shadow-lg mr-3 shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
+                <div className="rounded-full bg-[#FFE4C4] shadow-lg mr-3 shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 duration-500">
                   <FaGithub color="#5651e1" size={20} />
                 </div>
               </a>
               <Link href="/#contact">
-                <div className="rounded-full bg-[#ecf0f3] shadow-lg mr-3 shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
+                <div className="rounded-full bg-[#FFE4C4] shadow-lg mr-3 shadow-gray-400 p-4 cursor-pointer transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 duration-500">
                   <AiOutlineMail color="#5651e1" size={20} />
                 </div>
               </Link>
@@ -92,7 +92,7 @@ const Main = () => {
             <div className="flex justify-center items-center">
               <Link href="/#about">
                 <button className="w-full p-4 text-md flex justify-center items-center cursor-pointer transition-all ease-in duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500">
-                  Learn More{" "}
+                  Learn More{' '}
                   <span className="px-2 animate-bounce">
                     <AiOutlineDown />
                   </span>

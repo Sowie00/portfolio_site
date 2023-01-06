@@ -1,8 +1,8 @@
-import Image from "next/image";
-import React from "react";
-import Project from "../../models/projectModel";
-import { GoArrowSmallRight } from "react-icons/go";
-import connectMongo from "../../database/mongodb";
+import Image from 'next/image';
+import React from 'react';
+import Project from '../../models/projectModel';
+import { GoArrowSmallRight } from 'react-icons/go';
+import connectMongo from '../../database/mongodb';
 
 // export const getStaticPaths = async () => {
 //   const data = await getProjects();
@@ -43,7 +43,7 @@ const Details = ({ project }) => {
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
           <h2 className="py-2">{project.title}</h2>
-          <h3>{project.tags.join(" / ")}</h3>
+          <h3>{project.tags.join(' / ')}</h3>
         </div>
       </div>
 
@@ -53,12 +53,12 @@ const Details = ({ project }) => {
           <h2 className="pb-6">Overview</h2>
           <p className="text-xl">{project.description}</p>
           <a href={project.visit}>
-            <button className="px-8 py-2 mt-4 mr-8 bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white transition-all hover:shadow-lg hover:shadow-teal-400 duration-300 hover:-translate-y-1">
+            <button className="px-8 py-2 mt-4 mr-8 bg-[#5651e5] text-white transition-all hover:shadow-md hover:shadow-teal-400 duration-300 hover:-translate-y-1">
               Demo
             </button>
           </a>
           <a href={project.source}>
-            <button className=" px-8 py-2 mt-4 bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white transition-all hover:shadow-lg hover:shadow-teal-400 duration-300 hover:-translate-y-1">
+            <button className=" px-8 py-2 mt-4 bg-[#5651e5] text-white transition-all hover:shadow-md hover:shadow-teal-400 duration-300 hover:-translate-y-1">
               Code
             </button>
           </a>

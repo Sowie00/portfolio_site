@@ -1,10 +1,10 @@
-import React from "react";
-import Link from "next/link";
-import useInput from "../../hooks/use-input";
+import React from 'react';
+import Link from 'next/link';
+import useInput from '../../hooks/use-input';
 
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { HiOutlineChevronDoubleUp } from "react-icons/hi";
-import { FcCheckmark } from "react-icons/fc";
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
+import { FcCheckmark } from 'react-icons/fc';
 const Contact = () => {
   const {
     value: enteredName,
@@ -13,7 +13,7 @@ const Contact = () => {
     valueChangeHandler: nameChangedHandler,
     inputBlurHandler: nameBlurHandler,
     reset: resetNameInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) => value.trim() !== '');
 
   const {
     value: enteredEmail,
@@ -22,7 +22,7 @@ const Contact = () => {
     valueChangeHandler: emailChangedHandler,
     inputBlurHandler: emailBlurHandler,
     reset: resetEmailInput,
-  } = useInput((value) => value.includes("@"));
+  } = useInput((value) => value.includes('@'));
 
   const {
     value: enteredPhone,
@@ -31,7 +31,7 @@ const Contact = () => {
     valueChangeHandler: phoneChangedHandler,
     inputBlurHandler: phoneBlurHandler,
     reset: resetPhoneInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) => value.trim() !== '');
 
   const {
     value: enteredSubject,
@@ -40,7 +40,7 @@ const Contact = () => {
     valueChangeHandler: subjectChangedHandler,
     inputBlurHandler: subjectBlurHandler,
     reset: resetSubjectInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) => value.trim() !== '');
 
   const {
     value: enteredMessage,
@@ -49,7 +49,7 @@ const Contact = () => {
     valueChangeHandler: messageChangedHandler,
     inputBlurHandler: messageBlurHandler,
     reset: resetMessageInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) => value.trim() !== '');
 
   let formIsValid = false;
 
@@ -81,8 +81,8 @@ const Contact = () => {
       if (!field.name) return;
       formData[field.name] = field.value;
     });
-    fetch("/api/mail", {
-      method: "POST",
+    fetch('/api/mail', {
+      method: 'POST',
       body: JSON.stringify(formData),
     });
 
@@ -94,73 +94,73 @@ const Contact = () => {
   };
   ``;
 
-  let nameInputClasses = "";
-  let emailInputClasses = "";
-  let subjectInputClasses = "";
-  let phoneInputClasses = "";
-  let messageInputClasses = "";
-  let buttonClasses = "";
+  let nameInputClasses = '';
+  let emailInputClasses = '';
+  let subjectInputClasses = '';
+  let phoneInputClasses = '';
+  let messageInputClasses = '';
+  let buttonClasses = '';
 
   if (nameInputHasError) {
     nameInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white';
   } else if (enteredNameIsValid) {
     nameInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white';
   } else {
     nameInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white';
   }
 
   if (phoneInputHasError) {
     phoneInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white';
   } else if (enteredPhoneIsValid) {
     phoneInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white';
   } else {
     phoneInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white';
   }
 
   if (emailInputHasError) {
     emailInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white';
   } else if (enteredEmailIsValid) {
     emailInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white';
   } else {
     emailInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white';
   }
 
   if (subjectInputHasError) {
     subjectInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white';
   } else if (enteredSubjectIsValid) {
     subjectInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white';
   } else {
     subjectInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white';
   }
 
   if (messageInputHasError) {
     messageInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-red-300 bg-white';
   } else if (enteredMessageIsValid) {
     messageInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-green-300 bg-white';
   } else {
     messageInputClasses =
-      "border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white";
+      'border-2 rounded-lg focus:outline-none p-3 flex border-indigo-500 bg-white';
   }
 
   if (formIsValid) {
     buttonClasses =
-      "w-full p-4 mt-4 cursor-pointer transition-all ease-in duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500";
+      'w-full p-4 mt-4 cursor-pointer transition-all ease-in duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500';
   } else {
-    buttonClasses = "w-full p-4 mt-4 cursor-not-allowed disabled:text-gray-500";
+    buttonClasses = 'w-full p-4 mt-4 cursor-not-allowed disabled:text-gray-500';
   }
 
   return (

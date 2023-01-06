@@ -1,7 +1,7 @@
-import Image from "next/image";
-import React from "react";
-import { skillsData } from "../../../constants/Data";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import React from 'react';
+import { skillsData } from '../../../constants/Data';
+import { motion } from 'framer-motion';
 const Skills = (props) => {
   return (
     <div id="skills" className="w-full lg:h-screen p-2">
@@ -14,7 +14,7 @@ const Skills = (props) => {
           {skillsData.map((item) => (
             <motion.div
               key={item._id}
-              className=" h-36 w-full sm: shadow-xl shadow-gray-200 p-2 bg-gradient-to-r from-[#89D4CF] to-[#734AE8] rounded-full transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 hover:ease-in duration-300"
+              className=" h-36 w-full sm: shadow-xl shadow-gray-200 p-2 bg-[#5651e5] rounded-full transition-all ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500 hover:ease-in duration-300"
               initial={{
                 opacity: 0,
               }}
@@ -27,7 +27,7 @@ const Skills = (props) => {
             >
               <motion.div
                 key={item._id}
-                className="flex h-full w-full items-center rounded-full justify-center bg-white"
+                className="flex h-full w-full items-center rounded-full justify-center bg-[#FFE4C4]"
                 initial={{
                   opacity: 0,
                 }}

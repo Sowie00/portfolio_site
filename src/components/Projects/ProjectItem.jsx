@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 const ProjectItem = ({ title, image, tags, projectId }) => {
   return (
-    <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl transition-all ease-in-out delay-75 group hover:bg-gradient-to-r from-[#5651e5] to [#709dff] hover:scale-105">
+    <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl transition-all ease-in-out delay-75 group hover:bg-gradient-to-r from-[#FFE4C4] to [#fff] hover:scale-105">
       <Image
         className="rounded-xl group-hover:opacity-10"
         src={image}
@@ -19,10 +19,7 @@ const ProjectItem = ({ title, image, tags, projectId }) => {
         <ul className="flex justify-around p-2 my-5">
           {tags.map((tag, i) => {
             return (
-              <div
-                key={i}
-                className="rounded-xl px-2 py-1 mx-2 bg-gradient-to-r from-[#380036] to-[#0CBABA]"
-              >
+              <div key={i} className="rounded-xl px-2 py-1 mx-2 bg-[#5651e5]">
                 <li id={i} className=" text-xs text-white">
                   {tag}
                 </li>
@@ -32,7 +29,7 @@ const ProjectItem = ({ title, image, tags, projectId }) => {
         </ul>
         <div>
           <Link key={projectId} href={`/projects/${projectId}`}>
-            <p className="text-center py-3 rounded-lg bg-gradient-to-r from-[#380036] to-[#0CBABA] text-white text-md cursor-pointer">
+            <p className="text-center py-3 rounded-lg bg-[#5651e5] text-white text-md cursor-pointer">
               Learn More
             </p>
           </Link>
